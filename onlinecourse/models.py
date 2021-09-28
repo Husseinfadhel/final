@@ -106,7 +106,7 @@ class Question(models.Model):
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
     text = models.TextField()
     grade = models.FloatField()
-
+    course = models.ManyToManyField(Course)
     # Foreign key to lesson
     # question text
     # question grade/mark
