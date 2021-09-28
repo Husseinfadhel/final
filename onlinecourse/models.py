@@ -128,8 +128,9 @@ class Question(models.Model):
 # Indicate if this choice of the question is a correct one or not
 # Other fields and methods you would like to design
 class Choice(models.Model):
-    choice = models.TextField()
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, 
+    related_name="choice_set")
+    choice_text = models.CharField(max_length=200, default=" ")
     is_correct = models.BooleanField(default=False)
 
 
